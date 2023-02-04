@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style.css">
+
+
+  </head>
+  <body>
+    <!-- Add the navigation bar -->
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cvbuilder.html">Write Resume</a>
+      <a href="fileeditor.html">Create PDF file</a>
+      <a href="login.html">Log in</a>
+      <a href="signup.html">Sign Up</a>
+    </div>
+
+     <!-- Add the pop-up HTML -->
+     <div class="popup" id="myPopup">
+      <p>Would you like to give feedback?</p>
+      <button id="sureBtn">Sure</button>
+      <button id="cancelBtn">Not Now</button>
+    </div>
+        
+  <!-- Add the slide show -->
+  <div class="slideshow-container">
+
+    <!-- Slides -->
+    <div class="mySlides fade">
+      <img src="img1.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="img2.png" style="width:100%">
+    </div>
+  
+    <div class="mySlides fade">
+      <img src="img3.png" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+        <img src="img5.png" style="width:100%">
+      </div>
+    
+      <div class="mySlides fade">
+        <img src="img4.png" style="width:100%">
+      </div>
+  
+    <!-- Next & previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  
+  <!-- Add a dot indicator for the slides -->
+  <div class="dot-container">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+  
+  <!-- JavaScript code for the slide show -->
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+  
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+  
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+  
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+    <!-- start of footer -->	
+    <footer>
+	
+      <!-- start of footer container -->
+      <div class="container">
+      
+          <!-- start of row - 4 widget columns -->
+          <div class="row clearfix">
+              <div class="eight columns">
+                  <h6>About us</h6>
+                  <p>
+                    Build your first resume with us
+                  </p>
+                  <p>
+                    Building resume become super simple with us
+                  </p>
+              </div>
+              
+              <div class="four columns">
+                  <h6>Browse pages</h6>
+                  <ul class="square">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="cvbuilder.html">Write Resume</a></li>
+                      <li><a href="#">Terms and conditions</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                  </ul>	
+              </div>
+          </div>
+          <!-- end of row -->
+          
+          <!-- start of row - 4 widget columns -->
+         
+          <!-- end of row -->
+  
+          <!-- start of footer divider -->
+          <div class="sixteen columns">
+              <div class="footer-divider row"></div>
+          </div>	
+          <!-- end of footer divider -->
+          
+          <!-- start of bottoms -->
+          <div class="clearfix footnote">
+              <div class="eight columns">
+                  <p class="copyright">Copyright &copy; 2023 - Bura Admi Corp. - All Right Reserved</p>
+              </div>
+              <div class="eight columns">
+  </div>
+          </div>
+          <!-- end of bottoms -->
+         
+  
+      </div>
+      <!-- end of footer container -->
+      </footer>
+      <!-- end of footer -->			
+  
+  </div>
+  <!-- end of wrapper -->
+  <p id="back-top">
+    <a href="#top">
+      <span></span>To top
+    </a>
+  </p>
+  
+  <script>
+    const popup = document.getElementById("myPopup");
+    const sureBtn = document.getElementById("sureBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const popupContainer = document.querySelector(".popup");
+  
+    // Display the pop-up after every page reload
+    window.onload = function() {
+      popup.style.display = "block";
+    };
+  
+    // Close the pop-up if the user clicks outside it
+    window.onclick = function(event) {
+      if (event.target === popupContainer) {
+        popup.style.display = "none";
+      }
+    };
+  
+    sureBtn.addEventListener("click", function() {
+      window.location.href = "feedback.php";
+    });
+  
+    cancelBtn.addEventListener("click", function() {
+      popup.style.display = "none";
+    });
+  </script>
+     
+</body>
+</html>  
+

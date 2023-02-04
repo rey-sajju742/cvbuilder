@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>CV Builder</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ccc;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+
+        form {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #eee;
+        }
+
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="fileeditor.html">Write File</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Log Out</a>
+      </nav>
+    </header>
+    <form method="POST">
+      <h2>Personal Information</h2>
+      <label for="first-name">First Name:</label>
+      <input type="text" id="first-name" required placeholder="Muhammad. . .">
+      <br><br>
+      <label for="middle-name">Middle Name:</label>
+      <input type="text" id="middle-name" required placeholder="Umer. . .">
+      <br><br>
+      <label for="last-name">Last Name:</label>
+      <input type="text" id="last-name" required placeholder="Ali. . .">
+      <br><br>
+      <label for="bio">Bio:</label>
+      <input type="text" id="bio" placeholder="I'm Professional Frontend Developer . . .">
+      <br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="optional umerali@example.com">
+      <br><br>
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone"  placeholder="optional +92123456789 ">
+      <br><br>
+      <label for="image">Upload a Photo:</label>
+      <input type="file" id="image" accept="image/*">
+      <br><br>
+      <label for="dob">Date of Birth:</label>
+      <input type="date" id="dob" required placeholder="January-01-2000">
+      <br><br>
+      <label for="address">Address:</label>
+      <textarea id="address" required placeholder="Capital Teritory, ISB . . ."></textarea>
+      <br><br>
+      <h2>Education</h2>
+<div>
+  <label for="highest-qualification">Highest Qualification:</label>
+  <select type="text" name="education" id="education"> 
+
+  <option name="education-level" value="illitrate">Illitrate</option>
+  <option name="education-level" value="primary">Primary Pass</option>
+  <option name="education-level" value="middle">Middle Pass</option>
+  <option name="education-level" value="matric">Matric Pass</option>
+  <option name="education-level" value="inter">Inter Pass</option>
+  <option name="education-level" value="bachelor">Bachelor Degree</option>
+  <option name="education-level" value="graduate">Graduated</option>
+  <option name="education-level" value="phd">P.hD Degree Holder</option>
+  <option value="Others">Others</option>
+</select>
+</div>
+<br><br>
+<div>
+  <label for="field">Field of Study:</label>
+  <select name="edufield" id="edufield">
+    <option value="-1">Select</option>
+    <option value="Chemistry">Chemistry</option>
+    <option value="Urdu">Urdu</option>
+    <option value="Microbiology">Microbiology</option>
+    <option value="Biotechnology">Biotechnology</option>
+    <option value="Physics">Physics</option>
+    <option value="BBA">BBA</option>
+    <option value="Software-engineer">Software-engineer</option>
+    <option value="Math">Math</option>
+    <option value="Biochemistry">Biochemistry</option>
+    <option value="computer">Computer</option>
+  </select>
+</div>
+
+  
+  <h2>Work Experience</h2>
+  <div>
+    <label for="occupation">Occupation:</label>
+    <input type="text" id="occupation" placeholder="Frontend Developer...">
+  </div>
+  <div>
+    <label for="company">Company Name:</label>
+    <input type="text" id="company" placeholder="ABC Company...">
+  </div>
+  <div>
+    <label for="duration">Duration:</label>
+    <input type="text" id="duration" placeholder="1 year and 6 months">
+  </div>
+  <div>
+    <label for="responsibilities">Responsibilities:</label>
+    <textarea id="responsibilities" placeholder="Developed UI for different web applications..."></textarea>
+  </div>
+  <h2>Skills</h2>
+  <div>
+    <label for="skills">Technical Skills:</label>
+    <input type="text" id="skills" placeholder="HTML, CSS, JavaScript, ReactJS...">
+  </div>
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<script>
+  const form = document.querySelector("form");
+  const firstName = document.querySelector("#first-name");
+  const middleName = document.querySelector("#middle-name");
+  const lastName = document.querySelector("#last-name");
+  const bio = document.querySelector("#bio");
+  const email = document.querySelector("#email");
+  const phone = document.querySelector("#phone");
+  const image = document.querySelector("#image");
+  const dob = document.querySelector("#dob");
+  const address = document.querySelector("#address");
+  const edufield = document.querySelector("#edufield");
+  const qualification = document.querySelector("#selectedDegree");
+  
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  
+    const doc = new jsPDF();
+    doc.setFontSize(22);
+    doc.text(`${firstName.value} ${middleName.value} ${lastName.value}`, 40, 30);
+    doc.setFontSize(16);
+    doc.text(bio.value, 40, 60);
+    doc.text(`Email: ${email.value}`, 40, 70);
+    doc.text(`Phone: ${phone.value}`, 40, 80);
+  
+
+  
+    const selectedDegree = education.options[education.selectedIndex].value;
+    doc.text(`Field of Study: ${selectedDegree}`, 40, 90);
+  
+    const selectedSubject = edufield.options[edufield.selectedIndex].value;
+    doc.text(`Major: ${selectedSubject}`, 40, 100);
+
+    const img = new Image();
+    img.src = URL.createObjectURL(image.files[0]);
+    doc.addImage(img, "JPEG", 150, 20, 40, 30);
+  
+    doc.text(`Date of Birth: ${dob.value}`, 40, 120);
+    doc.text(`Address: ${address.value}`, 40, 130);
+  
+    doc.save("resume.pdf");
+  });
+  </script>

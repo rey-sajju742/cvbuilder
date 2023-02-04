@@ -1,0 +1,153 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    margin: 0;
+  }
+
+  header {
+    position: fixed;
+    margin-bottom: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgb(51, 51, 51, 0.8);
+    padding: 20px;
+  }
+  
+  .slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  
+  .mySlides {
+    display: none;
+  }
+  
+  .slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background-color: rgba(66, 30, 223, 0.5);
+    padding: 20px;
+  }
+  
+  
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .eight.columns, .four.columns {
+    padding: 0 20px;
+    flex-basis: calc(33.33% - 40px);
+  }
+  
+  .eight.columns {
+    padding-right: 40px;
+  }
+  
+  h6 {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  
+  .square li a {
+    color: #fff;
+    font-size: 12px;
+    line-height: 24px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .twelve.columns {
+    padding: 0;
+  }
+  
+  .four.columns.alpha,
+  .four.columns,
+  .four.columns.omega {
+    text-align: center;
+  }
+  
+  strong.italic {
+    font-style: italic;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .disc li {
+    font-size: 12px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .disc li a.visiblelink {
+    color: #fff;
+  }
+  
+  .vimeo-rollover {
+  background-image: url(images/social/vimeo-rollover.png);
+  width: 32px;
+  height: 32px;
+  display: block;
+  }
+  
+  .footer-copyright {
+  background-color: #222;
+  color: #999;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 12px;
+  }

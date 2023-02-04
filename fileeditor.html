@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script>
+    tinymce.init({
+      selector: '#mytextarea'
+    });
+  </script>
+  <style>
+    textarea {
+      width: 100%;
+      height: 300px;
+      padding: 10px;
+      font-size: 16px;
+      font-family: Arial;
+      box-sizing: border-box;
+    }
+
+    header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav a {
+
+    color: #ccc;
+    margin: 0 1em;
+    text-decoration: none;
+  }
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: Arial;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="fileeditor.html">Write File</a>
+      <a href="cvbuilder.html">Write Resume</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="index.html">Log Out</a>
+    </nav>
+  </header>
+  <textarea id="mytextarea"></textarea><br>
+  <button onclick="downloadPdf()">Download</button>
+
+  <script>
+    function downloadPdf() {
+      var text = tinymce.activeEditor.getContent({format: 'text'});
+      var pdf = new jsPDF();
+      pdf.text(20, 20, text);
+      pdf.save("document.pdf");
+    }
+  </script>
+</body>
+</html>
